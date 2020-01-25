@@ -1,6 +1,6 @@
 [Course Website](https://robotics.cs.rutgers.edu/cs-440-intro-to-artifical-intelligence-spring-2020/)
 
-# Lecture 2 <br> Intelligent Agents & Optimization Problems
+# Lecture 2 - Intelligent Agents & Optimization Problems
 
 ## Last class
 How to define each of the following:
