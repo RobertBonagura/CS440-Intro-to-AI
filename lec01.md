@@ -67,18 +67,20 @@ A data structure representing the environment. It incorporates all relevant info
 If the agent always has access to the complete state of the environment, then the environment is fully observable.
 
 **Deterministic vs stochastic**<br>
-If the next state is completely determined by the current state and the the agent's actionm then the environment is determinstic.<br>
-If the the environment is determinstic except from the actions of other agents, then it is called strategic.
+If the next state is completely determined by the current state and the agent's action then the environment is determinstic.
+
+If the environment is determinstic, except from the actions of other agents, then it is called a strategic environment.
 
 **Episodic vs sequential**<br>
-In an episodic environment, the agent's experience does not depend the actions taken in previous episodes.<br>
+In an episodic environment, the agent's experience does not depend on the actions taken in previous episodes.
+
 In sequential, the current decision could affect all future decisions.
 
 **Static vs dynamic**<br>
 If the environment changes while the agent is not acting, then the environment is dynamic
 
 **Discrete vs continuous**<br>
-Continuous values can appear in the state of the environment, time, in the perceptions or actions of the agent.
+Continuous values can appear in the state of the environment, time, and in the perceptions or actions of the agent.
 
 **Single agent vs multiagent**<br>
 Multiagent environments include Competitive and Cooperative environments.
