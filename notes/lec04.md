@@ -1,5 +1,5 @@
 1-30-20
-# Lecture 4 - A* Search, Minimax Search and Desiciion Trees
+# Lecture 4 - A* Search
 ## Gradient Descent (review)
 The gradient is found by calculating the derivatibe.
 
