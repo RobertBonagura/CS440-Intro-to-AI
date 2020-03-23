@@ -4,24 +4,24 @@
 
 ### a) This is an instance of a Constraint Satisfaction Problem. What is the set of variables, and what is the domain of possible values for each? How do the constrains look like?
 
-There are 81 variables, one for each square, n<sub>ij</sub>.
+There are 81 - M variables, one for each square n<sub>ij</sub> that is not assigned by the definition of the problem.
 
-For each variable n<sub>ij</sub>, the domain is 1 - 9. The exception to this however are the variables that belong to the set of M variables that have been specified in the starting problem. For these variables, their domain is the value initially defined by the puzzle.
+For each variable, the domain is 1 - 9.
 
 There are three contraints:
-1. For each variable in n<sub>1j</sub> through n<sub>9j</sub>, no number in the domain can be repeated.
-2. For each variable in n<sub>i1</sub> through n<sub>i9</sub>, no number in the domain can be repeated.
+1. For each value in n<sub>1j</sub> through n<sub>9j</sub>, no number in the domain can be repeated.
+2. For each value in n<sub>i1</sub> through n<sub>i9</sub>, no number in the domain can be repeated.
 3. For each of the 9 different 3x3 boxes, no number in the domain can be repeated.
 
 ### b) One way to approach the problem, is through an incremental formulation approach and apply backtracking search. Formalize this problem using an incremental formulation. What are the start state, successor function, goal test, and path cost function?
 
-Start state: All variables are unassigned, except for the M variables that are specified by the starting problem.
+Start state: All variables are unassigned. Only the squares that belong to the set of M defined values are defined.
 
 Successor function: Returns the Sudoku board with one newly assigned variable.
 
 Goal test: Every variable is assigned a value within the given domain that satisfies all three contraints.
 
-Path Cost: The number of variables that were defined by the agent.
+Path Cost: The number of variables defined by the agent, 81 - M.
 
 ### Which heuristic for backtracking search would you expect to work better for this problem, the degree heuristic, or the minimum remaining values heuristic and why?
 
@@ -37,9 +37,9 @@ Branching factor: (n!) * 9<sup>n</sup>, where n is the number of nodes unassigne
 
 Solution depth: 81 - M
 
-Maximum depth of searchspace: 81 - M
+Maximum depth of searchspace: 81 - M. This is the same as the solution depth in this example because the depth of the search space corresponds to the number of variables assigned. Backtracking a tree with this characteristic ensures that the depth of the search space will not exceed the depth of the solution.
 
-Size of the state space: <sub>((81 - M)! * 9<sup>81 - M</sup>)</sub> C <sub>(81 - M)</sub>
+Size of the state space: 10<sup>(81 - M)</sup> because each of the assignable variables has 10 possible options, either being assigned a value of 1-9 or not being assigned a value yet at all.
 
 ### c) What, is the difference between “easy” and “hard” Sudoku problems? [Hint: There are heuristics which for easy problems will allow to quickly walk right to the solution with almost no backtracking.]
 
@@ -52,3 +52,17 @@ Therefore, a "hard" Sudoku problem would be one where the MRV heuristic continue
 
 ### Another technique that might work well in solving the Sudoku game is local search. Please design a local search algorithm that is likely to solve Sudoku quickly, and write it in pseudocode. You may want to look at the WalkSAT algorithm for inspiration. Do you think it will work better or worse than the best incremental search algorithm on easy problems? On hard problems? Why?
 
+```
+function
+    model <- a random assignment to all variables
+    while true:
+        if model satisfies constraints then return model
+        unit <- a randomly selected unit that fails a constraint
+        with probability 0.5:
+            varToChange <- random variable in unit
+        else 
+            varToReplace <- whichever variable participates in max number of constraints
+        Make value of varToChange set to least-constraining-value heuristic
+```
+
+I think that this algorithm will not work as well as the best incremental search algorithm on hard or easy problems because it relies heavily on changing a random value. While this does avoid local minimums and ensures that it will eventually solve the problem, it does not guarantee for it to do so as quickly as the best incremental search algorithm might.
