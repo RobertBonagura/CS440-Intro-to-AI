@@ -1,3 +1,5 @@
+<!---<style>p, ol, ul{font-size: 14px;}</style>
+--->
 # Assignment 2
 
 ## Problem 2:
@@ -29,7 +31,7 @@ We know that the degree heuristic is better when there is a tie among the MRV he
 
 Because it is unlikely that all unassigned variables have the same MRV in a given state, the degree heursitic is not best. Although the degree heuristic reduces the branching factor and can make some significant decisions early that prevent a lot of backtracking later on, it fails to see which variables are most liekly to fail soon.
 
-I think that the MRV is likely to be a better heuristic, pruning the search tree by picking the variable that is most likely to fail soon. 
+The degree heuristic in this case would not be helpful because every variable is involved in at most 3 constraints. MRV would be better there is a greater distribution among the possible MRV heuristic values for each variable (i.e. any unsigned variable in row 2 will have an MRV of at most 4, while any unassigned variable in row 7 will have an MRV of at most 8). Also, it is easier to sort them and pick the one with the smallest MRV. 
 
 ### What is the branching factor, solution depth, and maximum depth of the searchspace? What is the size of the state space? 
 
