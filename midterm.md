@@ -124,5 +124,19 @@ P(A=False, B=False, C=False, D=False, E=False)<br>
 = 0.0064
 = 0.64 %
 
-
 #### c. What is the probability that A is false given that the four other variables are all known to be true?
+A is not dependent on any other variables. Therefore,P(A=False | B=True, C=True, D=True, E=True) is simply P(A=False).
+
+The probability that A is false is: 1 - P(A=True)<br>
+= 1 - 0.2<br>
+= 0.8<br>
+= 80%
+
+<!--
+Because A is not dependent on D, we can write
+P(A=False | B=True, C=True, D=True, E=True) as simply <br>
+P(A=False)
+P(A=False | D=True) where P(D)
+= P(A) * P(D | !A)<br>
+= 0.2 * (0.9 + 0.6)<br> 
+-->
