@@ -92,6 +92,21 @@ Therefore, when *A*=False, *B*=True, *C*=False, *D*=False, and *F*=False it crea
 
 #### a. What is the probability that all five of these Boolean variables are simultaneously true?
 
+P(A=True, B=True, C=True, D=True, E=True)<br>
+= [ P(A) * P(B) * P(C) * P(D | A=True, B=True) * P(E | B=True, C=True)]<br>
+
+
+P(A=True) = 0.2<br>
+P(B=True) = 0.5<br>
+P(C=True) = 0.8<br>
+P(D=True | A=True, B=True) = 0.1<br>
+P(E=True | B=True, C=True) = 0.3 <br>
+
+Therefore:
+P(A=True, B=True, C=True, D=True, E=True)<br>
+= 0.2 * 0.5 * 0.8 * 0.1 * 0.3<br>
+= 0.0024<br>
+= 0.24%
 
 #### b. What is the probability that all five of these Boolean variables are simultaneously false?
 
