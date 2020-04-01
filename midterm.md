@@ -31,7 +31,9 @@ Action a<sub>k</sub> in the graph below corresponds to the action of dropping a 
 ## Question 2
 #### 1. What is the minimum number of cells that the shortest path first algorithm needs to expand in the grid shown in Figure 3 before finding a path to the goal (and why)?
 
-We can find the minium number of cells needed to expand by counting each cell at every frontier untill we reach the first frontier where the goal cell is a neighbor.
+For the shortest path first algorithm, we will define the weight between each neighboring cell as 1. Therefore, because all weights are the same, shortest path first will perform functionally the same as Breadth First Search.
+
+We can find the minium number of cells needed to expand by counting each cell at every frontier untill we eventually reach the a frontier that has the goal cell as a neighbor.
 
 ![](./Question2-1.jpg)
 <br>
@@ -49,13 +51,16 @@ This heuristic is admissible because it never overestimates the cost of reaching
 
 #### 3. What is the minimum number of cells A* wtih your heuristic needs to expand the grid shown in Figure 3 before finding a path to the goal.
 
-The minimum number of cells visited by A*, based on my heuristic, is going to the same as the minimum number of cells visited by shortest path first, 16. What makes A* better is that the minimum number of cells expanded by A* will be the same as the maximum number of cells. This is because on the final frontier it will always expand the node that is adjascent to the goal fist.
+The minimum number of cells visited by A*, based on my heuristic, is going to the same as the minimum number of cells visited by shortest path first, which is 16. 
 
-For shortest path first on the other hand, the maximum number of cells expanded on on the final frontier is not guaranteed to be the same as the minimum number of cells expanded on the final frontier. For instance, if a heuristic was not involved, the shortest path first could potentially visit this many cells worst case scenario.
+What makes A* better is that the minimum number of cells expanded by A* will always be the same as the maximum number of cells expanded. This is because on the final frontier, the node adjascent to the goal node will always be exapnded fist when using my heuristic.
+
+For shortest path first on the other hand, the maximum number of cells expanded on the final frontier is not guaranteed to be the same as the minimum number of cells expanded on the final frontier. For instance, if a heuristic was not involved, the shortest path first could potentially visit the number of cells highlighted below.
 
 ![](./Question2-3.jpg)
 <br>
 <br>
+Therefore, the minumum number of cells needed to expand by A* is also 16 (when including both start and goal nodes).
 
 ---
 ## Question 3
