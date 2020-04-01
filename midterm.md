@@ -93,21 +93,36 @@ Therefore, when *A*=False, *B*=True, *C*=False, *D*=False, and *F*=False it crea
 #### a. What is the probability that all five of these Boolean variables are simultaneously true?
 
 P(A=True, B=True, C=True, D=True, E=True)<br>
-= [ P(A) * P(B) * P(C) * P(D | A=True, B=True) * P(E | B=True, C=True)]<br>
-
+= [ P(A) * P(B) * P(C) * P(D | A, B) * P(E | B, C)]<br>
 
 P(A=True) = 0.2<br>
 P(B=True) = 0.5<br>
 P(C=True) = 0.8<br>
-P(D=True | A=True, B=True) = 0.1<br>
-P(E=True | B=True, C=True) = 0.3 <br>
+P(D=True | A, B) = 0.1<br>
+P(E=True | B, C) = 0.3 <br>
 
 Therefore:
 P(A=True, B=True, C=True, D=True, E=True)<br>
 = 0.2 * 0.5 * 0.8 * 0.1 * 0.3<br>
 = 0.0024<br>
-= 0.24%
+= 0.24 %
 
 #### b. What is the probability that all five of these Boolean variables are simultaneously false?
+
+P(A=False, B=False, C=False, D=False, E=False)<br>
+= [ P(!A) * P(!B) * P(!C) * P(!D | !A, !B) * P(!E | !B, !C)]<br>
+
+P(A=False) = 0.8<br>
+P(B=False) = 0.5<br>
+P(C=False) = 0.2<br>
+P(D=False | !A, !B) = 1 - P(D=True | !A, !B) = 1 - 0.9 = 0.1<br>
+P(E=False | !B, !C) = 1 - P(E=True | !B, !C) = 1 - 0.2 = 0.8<br>
+
+Therefore:
+P(A=False, B=False, C=False, D=False, E=False)<br>
+= 0.8 * 0.5 * 0.2 * 0.1 * 0.8<br>
+= 0.0064
+= 0.64 %
+
 
 #### c. What is the probability that A is false given that the four other variables are all known to be true?
