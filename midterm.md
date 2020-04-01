@@ -23,7 +23,7 @@ I have only expanded the nodes that would be explored in the minimax algorithm.
 
 Square nodes represent a turn for *Red* and triangle nodes represent a turn for *Yellow*.
 
-Action a<sub>k</sub> in the graph below corresponds to the action of dropping a token in column C<sub>k</sub>. Inside the node is the value returned by the heuristic function on that cell.
+Action a<sub>k</sub> in the graph below corresponds to the action of dropping a token in column C<sub>k</sub>. Inside the node is the value returned by the heuristic function on that cell. Each node can make at most 3 actions because actions a<sub>3</sub>, a<sub>4</sub> and a<sub>5</sub> are invalid due to the fact that they each correspond to full column.
 
 ![](./Question1.jpg)
 
@@ -83,9 +83,10 @@ Therefore, when *A*=False, *B*=True, *C*=False, *D*=False, and *F*=False it crea
 
 ---
 ## Question 5
-#### Consider the Bayesian netowrk shown in Figure 4, where variables A through E are all Boolean valued:
+#### Consider the Bayesian network shown in Figure 4, where variables A through E are all Boolean valued:
 
 #### a. What is the probability that all five of these Boolean variables are simultaneously true?
+
 
 #### b. What is the probability that all five of these Boolean variables are simultaneously false?
 
