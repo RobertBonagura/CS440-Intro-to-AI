@@ -1,4 +1,5 @@
-Robert Bonagura
+Robert Bonagura<br>
+rjb348
 # Midterm
 ## Question 1
 #### 1. Define a State space, Action space, transition function and reward function for this problem.
