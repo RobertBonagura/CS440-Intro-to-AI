@@ -66,7 +66,29 @@ Therefore, the minumum number of cells needed to expand by A* is also 16 (when i
 ## Question 3
 #### 1. If you divided these characters based on the weapons what would be the information gain.
 
+Gain(Weapon) = E(S) - I(Weapon)
+
+E(S) = - (2/11 log<sub>2</sub> 2/11) + (2/11 log<sub>2</sub> 2/11) + (2/11 log<sub>2</sub> 2/11) + (3/11 log<sub>2</sub> 3/11) + (2/11 log<sub>2</sub> 2/11)<br>
+= - (4 * 2/11 log<sub>2</sub> 2/11) + (3/11 log<sub>2</sub> 3/11)<br>
+= - (-1.789) + (-0.511)<br>
+= 2.3<br>
+E(S) = 2.3
+
+I(Weapon) = (2/11 * 0) + (2/11 * 0) + (2/11 * 1) + (2/11 * 3/2) + (1/11 * 0)<br>
+= (2/11 * 1) + (4/11 * 3/2)<br>
+= 2/11 + 6/11<br>
+= 8/11<br>
+I(Weapon) = 8/11<br>
+
+Therefore, because Gain(Weapon) = E(S) - I(Weapon)<br>
+Gain(Weapon) = 2.3 - (8/11)<br>
+= 1.573
+
+The Information Gain for Weapon is 1.573
+
 #### 2. Construct a classification tree that uses the attributes provided (Weapon, Height, Armor and Age) to classify the characters.
+
+![](./Question3.jpg)
 
 ---
 ## Question 4
